@@ -1,4 +1,5 @@
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import Signature from "./signature"
 
 // TODO: replace these placeholder hrefs with Beds4u's real social profiles once available.
 const socials = [
@@ -77,9 +78,12 @@ export default function Footer() {
           <LocalizedClientLink href="/cart">Basket</LocalizedClientLink>
           <LocalizedClientLink href="/contact">Contact</LocalizedClientLink>
         </nav>
-        <p className="text-xs text-stone-400">
-          © {new Date().getFullYear()} Beds4u
-        </p>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+          <p className="text-xs text-stone-400">
+            © {new Date().getFullYear()} Beds4u
+          </p>
+          <Signature />
+        </div>
       </div>
     </footer>
   )
