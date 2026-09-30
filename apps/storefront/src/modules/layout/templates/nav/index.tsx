@@ -6,7 +6,6 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import CartDropdown from "@modules/layout/components/cart-dropdown"
 import SearchModal from "@modules/layout/components/search-modal"
 import SideMenu from "@modules/layout/components/side-menu"
-import ThemeToggle from "@modules/layout/components/theme-toggle"
 import WishlistNavIcon from "@modules/layout/components/wishlist-nav-icon"
 import { usePathname } from "next/navigation"
 
@@ -50,6 +49,7 @@ export default function Nav() {
           </div>
 
           <div className="flex items-center gap-x-4 h-full flex-1 basis-0 justify-end">
+            <WishlistNavIcon />
             <SearchModal />
             <LocalizedClientLink
               className="flex items-center h-full hover:text-ui-fg-base transition-colors"
@@ -59,8 +59,6 @@ export default function Nav() {
             >
               <User size={20} />
             </LocalizedClientLink>
-            <WishlistNavIcon />
-            <ThemeToggle />
             <CartDropdown />
           </div>
         </nav>

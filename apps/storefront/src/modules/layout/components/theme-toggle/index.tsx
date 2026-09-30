@@ -1,10 +1,11 @@
 "use client"
 
+import { clx } from "@modules/common/components/ui"
 import { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
 import { AnimatePresence, motion } from "motion/react"
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ className }: { className?: string }) {
   const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
@@ -21,7 +22,10 @@ export default function ThemeToggle() {
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-      className="relative flex h-8 w-8 items-center justify-center rounded-full text-ui-fg-subtle transition-colors hover:bg-ui-bg-subtle-hover hover:text-ui-fg-base"
+      className={clx(
+        "relative flex h-8 w-8 items-center justify-center rounded-full transition-colors",
+        className || "text-ui-fg-subtle hover:bg-ui-bg-subtle-hover hover:text-ui-fg-base"
+      )}
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.span

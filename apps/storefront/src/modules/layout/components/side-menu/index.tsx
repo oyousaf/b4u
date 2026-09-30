@@ -5,6 +5,7 @@ import { motion } from "motion/react"
 import { XMark } from "@medusajs/icons"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import { Text } from "@modules/common/components/ui"
+import ThemeToggle from "@modules/layout/components/theme-toggle"
 import { Fragment } from "react"
 
 
@@ -97,11 +98,12 @@ const SideMenu = () => {
                         )
                       })}
                     </ul>
-                    <div className="flex flex-col gap-y-6">
-                      <Text className="flex justify-between txt-compact-small">
+                    <div className="flex items-center justify-between gap-y-6">
+                      <Text className="txt-compact-small">
                         © {new Date().getFullYear()} Beds4u. All rights
                         reserved.
                       </Text>
+                      <ThemeToggle className="text-ui-fg-on-color hover:bg-white/10" />
                     </div>
                   </div>
                 </PopoverPanel>
