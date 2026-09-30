@@ -49,8 +49,8 @@ export default function Nav() {
           </div>
 
           <div className="flex items-center gap-x-4 h-full flex-1 basis-0 justify-end">
-            <WishlistNavIcon />
             <SearchModal />
+            <WishlistNavIcon />
             <LocalizedClientLink
               className="flex items-center h-full hover:text-ui-fg-base transition-colors"
               href="/account"
