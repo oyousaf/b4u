@@ -28,13 +28,22 @@ export default function Nav() {
     <div className="sticky top-0 inset-x-0 z-50 group">
       <header className="relative h-16 mx-auto border-b duration-200 bg-ui-bg-base border-ui-border-base">
         <nav className="content-container txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
-          <div className="flex-1 basis-0 h-full flex items-center">
-            <div className="h-full">
-              <SideMenu />
-            </div>
+          <div className="flex items-center gap-x-2 h-full small:flex-1 small:basis-0">
+            <SideMenu />
+            <LocalizedClientLink
+              href="/"
+              className="flex items-center gap-2.5 hover:text-ui-fg-base small:hidden"
+              data-testid="nav-store-link-mobile"
+              onClick={handleLogoClick}
+            >
+              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-stone-800 dark:bg-stone-100 font-serif text-sm font-semibold text-stone-100 dark:text-stone-900">
+                B
+              </span>
+              <span className="font-serif text-xl tracking-tight">Beds4u</span>
+            </LocalizedClientLink>
           </div>
 
-          <div className="flex items-center h-full">
+          <div className="hidden small:flex items-center h-full">
             <LocalizedClientLink
               href="/"
               className="flex items-center gap-2.5 hover:text-ui-fg-base"
