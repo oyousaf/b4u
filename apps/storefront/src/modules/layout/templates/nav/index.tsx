@@ -1,10 +1,13 @@
 "use client"
 
 import { scrollToTop } from "@lib/util/scroll-to-top"
+import User from "@modules/common/icons/user"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartDropdown from "@modules/layout/components/cart-dropdown"
+import SearchModal from "@modules/layout/components/search-modal"
 import SideMenu from "@modules/layout/components/side-menu"
 import ThemeToggle from "@modules/layout/components/theme-toggle"
+import WishlistNavIcon from "@modules/layout/components/wishlist-nav-icon"
 import { usePathname } from "next/navigation"
 
 export default function Nav() {
@@ -47,15 +50,16 @@ export default function Nav() {
           </div>
 
           <div className="flex items-center gap-x-4 h-full flex-1 basis-0 justify-end">
-            <div className="hidden small:flex items-center gap-x-6 h-full">
-              <LocalizedClientLink
-                className="hover:text-ui-fg-base flex items-center h-full"
-                href="/account"
-                data-testid="nav-account-link"
-              >
-                Account
-              </LocalizedClientLink>
-            </div>
+            <SearchModal />
+            <WishlistNavIcon />
+            <LocalizedClientLink
+              className="flex items-center h-full hover:text-ui-fg-base transition-colors"
+              href="/account"
+              aria-label="Account"
+              data-testid="nav-account-link"
+            >
+              <User size={20} />
+            </LocalizedClientLink>
             <ThemeToggle />
             <CartDropdown />
           </div>
