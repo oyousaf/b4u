@@ -51,7 +51,6 @@ export default function Nav() {
 
           <div className="flex items-center gap-x-4 h-full flex-1 basis-0 justify-end">
             <SearchModal />
-            <WishlistNavIcon />
             <LocalizedClientLink
               className="flex items-center h-full hover:text-ui-fg-base transition-colors"
               href="/account"
@@ -60,6 +59,7 @@ export default function Nav() {
             >
               <User size={20} />
             </LocalizedClientLink>
+            <WishlistNavIcon />
             <ThemeToggle />
             <CartDropdown />
           </div>
